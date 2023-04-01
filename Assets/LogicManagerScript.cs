@@ -10,6 +10,12 @@ public class LogicManagerScript : MonoBehaviour
     public Text scoreText;
     public GameObject gameOverScreen;
 
+    private void Start()
+    {
+        gameOverScreen.SetActive(false);
+    }
+
+
     [ContextMenu("Increase Score")]
     public void addScore()
     {
@@ -29,5 +35,12 @@ public class LogicManagerScript : MonoBehaviour
     {
             gameOverScreen.SetActive(true);    
     }
+    public void applicationQuit()
+    {
+        Application.Quit();
+ 
+    }
+    
+
 
 }
