@@ -10,17 +10,17 @@ public class GravitateToZeroOnX : MonoBehaviour
     private void FixedUpdate()
     {
         // Position
-        if (Mathf.Abs(transform.position.x) > 0.01f)
+        if (Mathf.Abs(transform.position.x) > 0.001f)
         {
             Vector2 targetPosition = new Vector2(0f, transform.position.y);
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, positionSpeed * Time.fixedDeltaTime);
         }
 
         // Rotation
-        if (Quaternion.Angle(transform.rotation, Quaternion.identity) > 0.01f)
-        {
-            float targetAngle = 0f;
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0f, 0f, targetAngle), rotationSpeed * Time.fixedDeltaTime);
-        }
+        //if (Quaternion.Angle(transform.rotation, Quaternion.identity) > 0.001f)
+        //{
+        //    float targetAngle = 0f;
+        //    transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0f, 0f, targetAngle), rotationSpeed * Time.fixedDeltaTime);
+        //}
     }
 }

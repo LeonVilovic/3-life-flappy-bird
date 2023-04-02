@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class pipeMiddleScript : MonoBehaviour
 {
-    public LogicManagerScript LogicManagerScript;
+    public LogicManagerScript logicManagerScript;
     // Start is called before the first frame update
     void Start()
     {
-        LogicManagerScript = GameObject.FindGameObjectWithTag("LogicManager").GetComponent<LogicManagerScript>();
+        logicManagerScript = GameObject.FindGameObjectWithTag("LogicManager").GetComponent<LogicManagerScript>();
     }
 
     // Update is called once per frame
@@ -18,6 +18,6 @@ public class pipeMiddleScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        LogicManagerScript.addScore();
+        logicManagerScript.addScore();
     }
 }

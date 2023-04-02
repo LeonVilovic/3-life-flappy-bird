@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 public class LogicManagerScript : MonoBehaviour
 {
     public int playerScore;
+    public int lifePoints;
     public Text scoreText;
+    public Text lifeText;
     public GameObject gameOverScreen;
 
     private void Start()
@@ -21,15 +23,18 @@ public class LogicManagerScript : MonoBehaviour
     {
         playerScore = playerScore + 1;
         scoreText.text = playerScore.ToString();
-      
+    }
 
+    public void reduceLifePoints()
+    {
+        lifePoints = lifePoints - 1;
+        lifeText.text = lifePoints.ToString();
     }
 
     public void restartGame()
     {
         Debug.Log("restartGame() function triggerd");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        //todo
     }
     public void gameOver()
     {
@@ -38,7 +43,6 @@ public class LogicManagerScript : MonoBehaviour
     public void applicationQuit()
     {
         Application.Quit();
- 
     }
     
 

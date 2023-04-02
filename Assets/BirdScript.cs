@@ -22,21 +22,28 @@ public class BirdScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) == true && birdIsAlive)
         {
-            myRigidbody.velocity = Vector2.up * flapStrenght;
+            myRigidbody.velocity = myRigidbody.velocity*Vector2.right + Vector2.up * flapStrenght;
          //   myRigidbody.AddForce(Vector2.up * flapStrenght, ForceMode2D.Impulse);
         }
-        
-
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log($"OnCollisionEnter2D for bird");
-        //birdIsAlive = false;
-        //logicManagerScript.gameOver();
+        Debug.Log($"triggered OnCollisionEnter2D for bird");
+        logicManagerScript.reduceLifePoints();
+        if (logicManagerScript.lifePoints == 0)
+        {
+            birdIsAlive = false;
+            logicManagerScript.gameOver();
+            myRigidbody.gravityScale = 6;
+            Destroy(GameObject.FindGameObjectWithTag("bottomContainer"));
+        }
 
 
-         Vector2 direction = (transform.position - collision.transform.position).normalized;
+
+
+
+        Vector2 direction = (transform.position - collision.transform.position).normalized;
 
 
 
@@ -45,7 +52,7 @@ public class BirdScript : MonoBehaviour
        //   myRigidbody.AddForce(direction * CollisionForceMultiplier, ForceMode2D.Impulse);
           myRigidbody.velocity = direction * CollisionForceMultiplier;
 
-        //myRigidbody.gravityScale = 6;
+        //
         // myRigidbody.velocity = direction * CollisionForceMultiplier;
 
     }
