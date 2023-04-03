@@ -30,7 +30,13 @@ public class BirdScript : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log($"triggered OnCollisionEnter2D for bird");
+
         logicManagerScript.reduceLifePoints();
+
+        logicManagerScript.gravitateToX = false;
+        CancelInvoke("setGravitateToXTrue");
+        Invoke("setGravitateToXTrue", logicManagerScript.gravitateToXDelayTime);
+
         if (logicManagerScript.lifePoints == 0)
         {
             birdIsAlive = false;
@@ -39,24 +45,17 @@ public class BirdScript : MonoBehaviour
             Destroy(GameObject.FindGameObjectWithTag("bottomContainer"));
         }
 
-
-
-
-
         Vector2 direction = (transform.position - collision.transform.position).normalized;
-
-
 
         // Apply a force in the opposite direction of the collision
 
        //   myRigidbody.AddForce(direction * CollisionForceMultiplier, ForceMode2D.Impulse);
           myRigidbody.velocity = direction * CollisionForceMultiplier;
 
-        //
-        // myRigidbody.velocity = direction * CollisionForceMultiplier;
-
     }
-
-
+    public void setGravitateToXTrue()
+    {
+        logicManagerScript.gravitateToX=true;
+    }
 
 }

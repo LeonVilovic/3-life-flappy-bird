@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class LogicManagerScript : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class LogicManagerScript : MonoBehaviour
     public Text scoreText;
     public Text lifeText;
     public GameObject gameOverScreen;
+    public Boolean gravitateToX;
+    public float gravitateToXDelayTime = 1.0f;
 
     private void Start()
     {

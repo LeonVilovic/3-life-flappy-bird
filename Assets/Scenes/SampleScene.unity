@@ -838,6 +838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positionSpeed: 10
   rotationSpeed: 100
+  logicManagerScript: {fileID: 0}
 --- !u!1 &803646631
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,10 +916,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScore: 0
-  lifePoints: 3
+  lifePoints: 3000
   scoreText: {fileID: 1323527603}
   lifeText: {fileID: 10157801}
   gameOverScreen: {fileID: 1616707080}
+  gravitateToX: 0
+  gravitateToXDelayTime: 1
 --- !u!4 &871003496
 Transform:
   m_ObjectHideFlags: 0
