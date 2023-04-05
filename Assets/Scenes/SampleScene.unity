@@ -807,7 +807,8 @@ MonoBehaviour:
   myRigidbody: {fileID: 797524013}
   flapStrenght: 8
   logicManagerScript: {fileID: 0}
-  CollisionForceMultiplier: 15
+  CollisionForceMultiplier: 13
+  CollisionForceXAxisFactor: 1.3
 --- !u!58 &797524015
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -838,7 +839,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positionSpeed: 10
   rotationSpeed: 100
+  myRigidbody: {fileID: 797524013}
   logicManagerScript: {fileID: 0}
+  reductionRate: 0.1
 --- !u!1 &803646631
 GameObject:
   m_ObjectHideFlags: 0

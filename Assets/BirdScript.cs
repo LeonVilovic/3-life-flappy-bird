@@ -9,6 +9,7 @@ public class BirdScript : MonoBehaviour
     public  LogicManagerScript logicManagerScript;
     bool birdIsAlive = true;
     public float CollisionForceMultiplier;
+    public float CollisionForceXAxisFactor;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,7 @@ public class BirdScript : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log($"triggered OnCollisionEnter2D for bird");
+         Debug.Log($"triggered OnCollisionEnter2D for bird");
 
         logicManagerScript.reduceLifePoints();
 
@@ -49,9 +50,10 @@ public class BirdScript : MonoBehaviour
 
         // Apply a force in the opposite direction of the collision
 
-       //   myRigidbody.AddForce(direction * CollisionForceMultiplier, ForceMode2D.Impulse);
-          myRigidbody.velocity = direction * CollisionForceMultiplier;
+        //   myRigidbody.AddForce(direction * CollisionForceMultiplier, ForceMode2D.Impulse);
 
+        Vector2 XAxisScalingVector = new Vector2(CollisionForceXAxisFactor, 1f);
+        myRigidbody.velocity = XAxisScalingVector * direction * CollisionForceMultiplier;
     }
     public void setGravitateToXTrue()
     {
