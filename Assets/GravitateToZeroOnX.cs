@@ -36,7 +36,7 @@ public class GravitateToZeroOnX : MonoBehaviour
             //    transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0f, 0f, targetAngle), rotationSpeed * Time.fixedDeltaTime);
             //}
 
-
+            // Reduce Velocity
             float currentXVelocity = myRigidbody.velocity.x;
             float targetXVelocity = 0f;
             float reducedXVelocity = Mathf.Lerp(currentXVelocity, targetXVelocity, reductionRate);
