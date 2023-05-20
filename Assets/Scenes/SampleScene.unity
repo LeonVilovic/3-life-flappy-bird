@@ -873,7 +873,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameObjectForSpawn: {fileID: 2910164782140903997, guid: 818c856b523e6ad43b81c145161a9e16, type: 3}
   spawnRate: 3.5
-  spawnOffset: 5
+  spawnOffset: 11
 --- !u!4 &803646634
 Transform:
   m_ObjectHideFlags: 0
