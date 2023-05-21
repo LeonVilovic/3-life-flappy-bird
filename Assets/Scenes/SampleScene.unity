@@ -919,7 +919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScore: 0
-  lifePoints: 3000
+  lifePoints: 3
   scoreText: {fileID: 1323527603}
   lifeText: {fileID: 10157801}
   gameOverScreen: {fileID: 1616707080}
