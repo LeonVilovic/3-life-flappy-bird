@@ -6,6 +6,7 @@ TagManager:
   tags:
   - LogicManager
   - bottomContainer
+  - PipeSpawner
   layers:
   - Default
   - TransparentFX

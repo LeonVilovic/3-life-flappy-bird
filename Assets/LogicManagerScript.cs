@@ -18,6 +18,8 @@ public class LogicManagerScript : MonoBehaviour
     private void Start()
     {
         gameOverScreen.SetActive(false);
+        //TODO
+     //   PipeSpawner = GameObject.FindGameObjectWithTag("PipeSpawner").GetComponent(PipeSpawnerScrip);
     }
 
 
