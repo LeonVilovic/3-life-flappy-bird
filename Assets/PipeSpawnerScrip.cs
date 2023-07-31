@@ -7,7 +7,11 @@ public class PipeSpawnerScrip : MonoBehaviour
     public GameObject gameObjectForSpawn;
     public float spawnRate;
     private float timer =0;
-    public float spawnOffset = 10;
+
+    private float spawnOffset = 10;
+
+    public float SpawnOffset { get => spawnOffset; set => spawnOffset = value; }
+    public float Timer { get => timer; set => timer = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -30,8 +34,8 @@ public class PipeSpawnerScrip : MonoBehaviour
     }
 
     void spawnPipe() {
-        float lowestPoint = transform.position.y - spawnOffset;
-        float highestPoint = transform.position.y + spawnOffset;
+        float lowestPoint = transform.position.y - SpawnOffset;
+        float highestPoint = transform.position.y + SpawnOffset;
 
         Instantiate(gameObjectForSpawn, new Vector3(transform.position.x, Random.Range(lowestPoint, highestPoint),0), transform.rotation);
     }

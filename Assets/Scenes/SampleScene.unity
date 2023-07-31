@@ -786,7 +786,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -805,7 +805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidbody: {fileID: 797524013}
-  flapStrenght: 8
+  flapStrenght: 13.5
   logicManagerScript: {fileID: 0}
   CollisionForceMultiplier: 13
   CollisionForceXAxisFactor: 1.3
@@ -873,7 +873,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameObjectForSpawn: {fileID: 2910164782140903997, guid: 818c856b523e6ad43b81c145161a9e16, type: 3}
   spawnRate: 3.5
-  spawnOffset: 11
 --- !u!4 &803646634
 Transform:
   m_ObjectHideFlags: 0
@@ -919,12 +918,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScore: 0
-  lifePoints: 3
+  lifePoints: 30
   scoreText: {fileID: 1323527603}
   lifeText: {fileID: 10157801}
   gameOverScreen: {fileID: 1616707080}
   gravitateToX: 0
   gravitateToXDelayTime: 1
+  PipeSpawner: {fileID: 0}
 --- !u!4 &871003496
 Transform:
   m_ObjectHideFlags: 0

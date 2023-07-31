@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
+using Unity.VisualScripting;
 
 public class LogicManagerScript : MonoBehaviour
 {
@@ -14,12 +15,13 @@ public class LogicManagerScript : MonoBehaviour
     public GameObject gameOverScreen;
     public Boolean gravitateToX;
     public float gravitateToXDelayTime = 1.0f;
+    public PipeSpawnerScrip PipeSpawner;
 
     private void Start()
     {
         gameOverScreen.SetActive(false);
         //TODO
-     //   PipeSpawner = GameObject.FindGameObjectWithTag("PipeSpawner").GetComponent(PipeSpawnerScrip);
+        PipeSpawner = GameObject.FindGameObjectWithTag("PipeSpawner").GetComponent<PipeSpawnerScrip>();
     }
 
 
@@ -28,6 +30,7 @@ public class LogicManagerScript : MonoBehaviour
     {
         playerScore = playerScore + 1;
         scoreText.text = playerScore.ToString();
+        if (playerScore % 3 == 0) { increasePipeSpawnSpeed(); }    
     }
 
     public void reduceLifePoints()
@@ -49,7 +52,10 @@ public class LogicManagerScript : MonoBehaviour
     {
         Application.Quit();
     }
-    
 
+    public void increasePipeSpawnSpeed()
+    {
+         PipeSpawner.Timer= PipeSpawner.Timer-1;
+    }
 
 }
