@@ -22,6 +22,7 @@ public class LogicManagerScript : MonoBehaviour
         gameOverScreen.SetActive(false);
         //TODO
         PipeSpawner = GameObject.FindGameObjectWithTag("PipeSpawner").GetComponent<PipeSpawnerScrip>();
+        Debug.Log("PipeSpawner reference: " + PipeSpawner);
     }
 
 
@@ -55,7 +56,8 @@ public class LogicManagerScript : MonoBehaviour
 
     public void increasePipeSpawnSpeed()
     {
-         PipeSpawner.Timer= PipeSpawner.Timer-1;
+           PipeSpawner.Timer = PipeSpawner.Timer-1;
+         //PipeSpawner.Timer
     }
 
 }
