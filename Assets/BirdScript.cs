@@ -10,6 +10,7 @@ public class BirdScript : MonoBehaviour
     bool birdIsAlive = true;
     public float CollisionForceMultiplier;
     public float CollisionForceXAxisFactor;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,17 @@ public class BirdScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) == true && birdIsAlive)
         {
             myRigidbody.velocity = myRigidbody.velocity*Vector2.right + Vector2.up * flapStrenght;
-         //   myRigidbody.AddForce(Vector2.up * flapStrenght, ForceMode2D.Impulse);
+            //   myRigidbody.AddForce(Vector2.up * flapStrenght, ForceMode2D.Impulse);
+             
+
+        }
+        if (myRigidbody.velocity.y > 3)
+        {
+            animator.SetBool("flapping", true);
+        }
+        else
+        {
+            animator.SetBool("flapping", false);
         }
     }
 
