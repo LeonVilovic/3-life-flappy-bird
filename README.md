@@ -1,2 +1,2 @@
-# flappy-bird-metal-extreme
-flappy bird game clone with rocking tunes!
+# 3-life-flappy-bird
+flappy bird game clone where you have 3 life points.
