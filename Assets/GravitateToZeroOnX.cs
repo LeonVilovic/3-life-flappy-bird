@@ -15,8 +15,6 @@ public class GravitateToZeroOnX : MonoBehaviour
     private void Start()
     {
         logicManagerScript = GameObject.FindGameObjectWithTag("LogicManager").GetComponent<LogicManagerScript>();
-
-    
     }
 
     private void FixedUpdate()
