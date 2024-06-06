@@ -18,7 +18,7 @@ public class BackgroundControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distance = transform.position.x - paralaxEffect;
+        float distance = transform.position.x - paralaxEffect * Time.deltaTime;
 
         transform.position = new Vector2 (startPosition + distance, transform.position.y);
 
