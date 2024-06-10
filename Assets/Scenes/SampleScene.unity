@@ -1050,7 +1050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da191f70afc39834a9495041493afdca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paralaxEffect: 1
+  paralaxEffect: 1.7
 --- !u!212 &680574505
 SpriteRenderer:
   m_ObjectHideFlags: 0
