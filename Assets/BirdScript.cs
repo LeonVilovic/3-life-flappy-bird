@@ -29,13 +29,13 @@ public class BirdScript : MonoBehaviour
              
 
         }
-        if (myRigidbody.velocity.y > 3)
+        if (myRigidbody.velocity.y > -8)
         {
-            animator.SetBool("flapping", true);
+            animator.Play("Flying");
         }
         else
         {
-            animator.SetBool("flapping", false);
+            animator.Play("FallingEdit");
         }
     }
 
