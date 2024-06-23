@@ -25,7 +25,7 @@ public class BackgroundControler : MonoBehaviour
         if (distance < startPosition - length)
         {
             transform.position = new Vector2(startPosition, transform.position.y);
-            Debug.Log("Infinite scroll condition triggered. distance: " + distance + " startPosition: " + startPosition + " length: " + length);
+            //Debug.Log("Infinite scroll condition triggered. distance: " + distance + " startPosition: " + startPosition + " length: " + length);
         }
 
 

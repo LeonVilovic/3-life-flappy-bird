@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
 using Unity.VisualScripting;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class LogicManagerScript : MonoBehaviour
 {
@@ -16,6 +17,16 @@ public class LogicManagerScript : MonoBehaviour
     public Boolean gravitateToX;
     public float gravitateToXDelayTime = 1.0f;
     public PipeSpawnerScrip PipeSpawner;
+    private DifficultySettings difficultySettings;
+    public float scoreDifficultyMultiplier = 1;
+    //public int currentScoreThreshold = 400;
+
+    public void manageDifficulty()
+    {
+
+        increasePipeSpawnSpeed();
+    }
+
 
     private void Start()
     {
@@ -29,9 +40,9 @@ public class LogicManagerScript : MonoBehaviour
     [ContextMenu("Increase Score")]
     public void addScore()
     {
-        playerScore = playerScore + 1;
+        playerScore = playerScore + (int)(100 * scoreDifficultyMultiplier);
         scoreText.text = playerScore.ToString();
-        if (playerScore % 3 == 0) { increasePipeSpawnSpeed(); }    
+        if (playerScore > difficultySettings.currentScoreThreshold) { manageDifficulty(); }
     }
 
     public void reduceLifePoints()
@@ -47,7 +58,7 @@ public class LogicManagerScript : MonoBehaviour
     }
     public void gameOver()
     {
-            gameOverScreen.SetActive(true);    
+        gameOverScreen.SetActive(true);
     }
     public void applicationQuit()
     {
@@ -56,8 +67,10 @@ public class LogicManagerScript : MonoBehaviour
 
     public void increasePipeSpawnSpeed()
     {
-           PipeSpawner.Timer = PipeSpawner.Timer-1;
-         //PipeSpawner.Timer
+        //PipeSpawner.spawnRate = PipeSpawner.spawnRate - 0.1f;
+        if (PipeSpawner.spawnRate > 1.5) { PipeSpawner.spawnRate = PipeSpawner.spawnRate * 0.965f; }
+
+        Debug.Log("PipeSpawner.SpawnRate updated: " + PipeSpawner.spawnRate);
     }
 
 }
