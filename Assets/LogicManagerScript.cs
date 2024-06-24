@@ -18,8 +18,8 @@ public class LogicManagerScript : MonoBehaviour
     public float gravitateToXDelayTime = 1.0f;
     public PipeSpawnerScrip PipeSpawner;
     private DifficultySettings difficultySettings;
-    public float scoreDifficultyMultiplier = 1;
-    //public int currentScoreThreshold = 400;
+    
+    
 
     public void manageDifficulty()
     {
@@ -30,6 +30,7 @@ public class LogicManagerScript : MonoBehaviour
 
     private void Start()
     {
+        //DifficultySettings difficultySettings = DifficultySettings.Instance;  
         gameOverScreen.SetActive(false);
         //TODO
         PipeSpawner = GameObject.FindGameObjectWithTag("PipeSpawner").GetComponent<PipeSpawnerScrip>();
@@ -40,9 +41,9 @@ public class LogicManagerScript : MonoBehaviour
     [ContextMenu("Increase Score")]
     public void addScore()
     {
-        playerScore = playerScore + (int)(100 * scoreDifficultyMultiplier);
+        playerScore = playerScore + (int)(100 * DifficultySettings.Instance.ScoreDifficultyMultiplier);
         scoreText.text = playerScore.ToString();
-        if (playerScore > difficultySettings.currentScoreThreshold) { manageDifficulty(); }
+        if (playerScore > DifficultySettings.Instance.CurrentScoreThreshold) { manageDifficulty(); }
     }
 
     public void reduceLifePoints()
