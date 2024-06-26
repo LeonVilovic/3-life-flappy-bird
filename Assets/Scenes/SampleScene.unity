@@ -1331,7 +1331,6 @@ MonoBehaviour:
   positionSpeed: 10
   rotationSpeed: 100
   myRigidbody: {fileID: 797524013}
-  logicManagerScript: {fileID: 0}
   reductionRate: 0.1
 --- !u!95 &797524017
 Animator:
@@ -1566,14 +1565,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScore: 0
-  lifePoints: 3
+  lifePoints: 300
   scoreText: {fileID: 1323527603}
   lifeText: {fileID: 10157801}
   gameOverScreen: {fileID: 1616707080}
   gravitateToX: 0
   gravitateToXDelayTime: 1
-  PipeSpawner: {fileID: 0}
-  scoreDifficultyMultiplier: 1
 --- !u!4 &871003496
 Transform:
   m_ObjectHideFlags: 0

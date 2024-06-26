@@ -16,16 +16,8 @@ public class LogicManagerScript : MonoBehaviour
     public GameObject gameOverScreen;
     public Boolean gravitateToX;
     public float gravitateToXDelayTime = 1.0f;
-    public PipeSpawnerScrip PipeSpawner;
-    private DifficultySettings difficultySettings;
-    
     
 
-    public void manageDifficulty()
-    {
-
-        increasePipeSpawnSpeed();
-    }
 
 
     private void Start()
@@ -33,8 +25,7 @@ public class LogicManagerScript : MonoBehaviour
         //DifficultySettings difficultySettings = DifficultySettings.Instance;  
         gameOverScreen.SetActive(false);
         //TODO
-        PipeSpawner = GameObject.FindGameObjectWithTag("PipeSpawner").GetComponent<PipeSpawnerScrip>();
-        Debug.Log("PipeSpawner reference: " + PipeSpawner);
+
     }
 
 
@@ -43,7 +34,7 @@ public class LogicManagerScript : MonoBehaviour
     {
         playerScore = playerScore + (int)(100 * DifficultySettings.Instance.ScoreDifficultyMultiplier);
         scoreText.text = playerScore.ToString();
-        if (playerScore > DifficultySettings.Instance.CurrentScoreThreshold) { manageDifficulty(); }
+        if (playerScore > DifficultySettings.Instance.CurrentScoreThreshold) { DifficultySettings.Instance.increaseDifficulty(); }
     }
 
     public void reduceLifePoints()
@@ -66,12 +57,6 @@ public class LogicManagerScript : MonoBehaviour
         Application.Quit();
     }
 
-    public void increasePipeSpawnSpeed()
-    {
-        //PipeSpawner.spawnRate = PipeSpawner.spawnRate - 0.1f;
-        if (PipeSpawner.spawnRate > 1.5) { PipeSpawner.spawnRate = PipeSpawner.spawnRate * 0.965f; }
 
-        Debug.Log("PipeSpawner.SpawnRate updated: " + PipeSpawner.spawnRate);
-    }
 
 }

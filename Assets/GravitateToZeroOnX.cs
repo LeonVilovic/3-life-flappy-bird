@@ -8,7 +8,7 @@ public class GravitateToZeroOnX : MonoBehaviour
     public float rotationSpeed;
     public Rigidbody2D myRigidbody;
 
-    public LogicManagerScript logicManagerScript;
+    private LogicManagerScript logicManagerScript;
     public float reductionRate = 0.1f;
 
 
