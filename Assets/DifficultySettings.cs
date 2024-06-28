@@ -41,8 +41,16 @@ public class DifficultySettings
     public void increaseDifficulty()
     {
         scoreDifficultyMultiplier += 0.1f;
-        currentScoreThreshold = scoreThresholdArr[scoreThresholdIndex];
-        scoreThresholdIndex++;
+        if (scoreThresholdIndex != scoreThresholdArr.Length - 1)
+        {
+            currentScoreThreshold = scoreThresholdArr[scoreThresholdIndex];
+            scoreThresholdIndex++;
+        }
+        else
+        {
+            currentScoreThreshold += scoreThresholdArr[scoreThresholdIndex];
+        }
         increasePipeSpawnSpeed();
+        Debug.Log("increaseDifficulty() currentScoreThreshold:" + currentScoreThreshold.ToString());
     }
 }

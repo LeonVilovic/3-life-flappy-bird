@@ -8,7 +8,11 @@ public class BirdScript : MonoBehaviour
     public Rigidbody2D myRigidbody;
     public float flapStrenght;
     public LogicManagerScript logicManagerScript;
+    public Blinking blinking; //connect this in inspector
     bool birdIsAlive = true;
+    bool birdIsInvulnerablee = false;
+    float birdIsInvulnerableeTimeLeft = 0f;
+    public float InvulnerabilityTime = 2;
     public float CollisionForceMultiplier;
     public float CollisionForceXAxisFactor;
     public Animator animator;
@@ -17,7 +21,7 @@ public class BirdScript : MonoBehaviour
     void Start()
     {
         logicManagerScript = GameObject.FindGameObjectWithTag("LogicManager").GetComponent<LogicManagerScript>();
-
+        blinking.isBlinking = false;
     }
 
     // Update is called once per frame
@@ -29,24 +33,33 @@ public class BirdScript : MonoBehaviour
             //   myRigidbody.AddForce(Vector2.up * flapStrenght, ForceMode2D.Impulse);
 
         }
+        if (birdIsInvulnerablee)
+        {
+            birdIsInvulnerableeTimeLeft -= Time.deltaTime;
+            if (birdIsInvulnerableeTimeLeft < 0) { 
+            birdIsInvulnerablee = false;
+            blinking.isBlinking = false;
+            }
+        }
+
 
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
 
         if (myRigidbody.velocity.y > -8)
         {
 
-            if (stateInfo.IsName("Base Layer.Falling"))
+            if (stateInfo.IsName("Base Layer.Falling") && birdIsAlive)
             {
                 animator.Play("FallingReverse", 0, stateInfo.normalizedTime % 1);
                 //Debug.Log(stateInfo.normalizedTime.ToString() + " FallingReverse");
             }
-            else if (stateInfo.IsName("Base Layer.FallingReverse") && stateInfo.normalizedTime <= 1)
+            else if (stateInfo.IsName("Base Layer.FallingReverse") && stateInfo.normalizedTime <= 1 && birdIsAlive)
             {
                 animator.Play("FallingReverse");
                 //Debug.Log(stateInfo.normalizedTime.ToString() + " FallingReverse");
             }
 
-            else animator.Play("Flying");
+            else if (birdIsAlive) animator.Play("Flying");
             //Debug.Log(stateInfo.normalizedTime.ToString()+ " Flying");
 
         }
@@ -69,7 +82,16 @@ public class BirdScript : MonoBehaviour
     {
         //Debug.Log($"triggered OnCollisionEnter2D for bird");
 
+
+        if (!birdIsInvulnerablee)
+        {
         logicManagerScript.reduceLifePoints();
+            birdIsInvulnerablee = true;
+            birdIsInvulnerableeTimeLeft = InvulnerabilityTime;
+            blinking.isBlinking = true;
+        }
+
+
 
         logicManagerScript.gravitateToX = false;
         CancelInvoke("setGravitateToXTrue");
@@ -83,6 +105,8 @@ public class BirdScript : MonoBehaviour
             myRigidbody.gravityScale = 6;
             Destroy(GameObject.FindGameObjectWithTag("bottomContainer"));
         }
+
+
 
         Vector2 direction = (transform.position - collision.transform.position).normalized;
 
