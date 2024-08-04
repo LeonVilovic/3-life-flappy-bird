@@ -86,9 +86,12 @@ public class BirdScript : MonoBehaviour
         if (!birdIsInvulnerablee)
         {
         logicManagerScript.reduceLifePoints();
+            if (logicManagerScript.lifePoints > 0)
+            {
             birdIsInvulnerablee = true;
             birdIsInvulnerableeTimeLeft = InvulnerabilityTime;
             blinking.isBlinking = true;
+            }
         }
 
 
