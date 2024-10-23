@@ -29,7 +29,7 @@ public class BirdScript : MonoBehaviour
     {
         if ((Input.GetKeyDown(KeyCode.Space) == true || Input.touchCount > 0) && birdIsAlive)
         {
-            myRigidbody.velocity = myRigidbody.velocity * Vector2.right + Vector2.up * flapStrenght;
+            myRigidbody.linearVelocity = myRigidbody.linearVelocity * Vector2.right + Vector2.up * flapStrenght;
             //   myRigidbody.AddForce(Vector2.up * flapStrenght, ForceMode2D.Impulse);
 
         }
@@ -45,7 +45,7 @@ public class BirdScript : MonoBehaviour
 
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
 
-        if (myRigidbody.velocity.y > -8)
+        if (myRigidbody.linearVelocity.y > -8)
         {
 
             if (stateInfo.IsName("Base Layer.Falling") && birdIsAlive)
@@ -118,7 +118,7 @@ public class BirdScript : MonoBehaviour
         //   myRigidbody.AddForce(direction * CollisionForceMultiplier, ForceMode2D.Impulse);
 
         Vector2 XAxisScalingVector = new Vector2(CollisionForceXAxisFactor, 1f);
-        myRigidbody.velocity = XAxisScalingVector * direction * CollisionForceMultiplier;
+        myRigidbody.linearVelocity = XAxisScalingVector * direction * CollisionForceMultiplier;
     }
     public void setGravitateToXTrue()
     {

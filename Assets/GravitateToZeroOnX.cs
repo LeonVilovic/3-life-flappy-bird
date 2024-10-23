@@ -35,11 +35,11 @@ public class GravitateToZeroOnX : MonoBehaviour
             //}
 
             // Reduce Velocity
-            float currentXVelocity = myRigidbody.velocity.x;
+            float currentXVelocity = myRigidbody.linearVelocity.x;
             float targetXVelocity = 0f;
             float reducedXVelocity = Mathf.Lerp(currentXVelocity, targetXVelocity, reductionRate);
 
-            myRigidbody.velocity = new Vector2(reducedXVelocity, myRigidbody.velocity.y);
+            myRigidbody.linearVelocity = new Vector2(reducedXVelocity, myRigidbody.linearVelocity.y);
 
 
         }

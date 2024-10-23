@@ -21,11 +21,13 @@ ScriptedImporter:
     convertToNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
     isReadable: 0
     streamingMipmaps: 0
     streamingMipmapsPriority: 0
     vTOnly: 0
-    ignoreMasterTextureLimit: 0
+    ignoreMipmapLimit: 0
     nPOTScale: 1
     sRGBTexture: 1
     spriteMode: 2
@@ -103,6 +105,7 @@ ScriptedImporter:
     pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 0
@@ -124,6 +127,7 @@ ScriptedImporter:
     pivot: {x: 0.5283019, y: -0.18604651}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 61
@@ -144,6 +148,7 @@ ScriptedImporter:
     pivot: {x: 0.5283019, y: -0.18604651}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 61
@@ -164,6 +169,7 @@ ScriptedImporter:
     pivot: {x: 0.5283019, y: -0.21428573}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 122
@@ -184,6 +190,7 @@ ScriptedImporter:
     pivot: {x: 0.5283019, y: -0.21428573}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 122
@@ -204,6 +211,7 @@ ScriptedImporter:
     pivot: {x: 0.5283019, y: -0.18604651}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 61
@@ -224,6 +232,7 @@ ScriptedImporter:
     pivot: {x: 0.5192307, y: -0.18604651}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 61
@@ -244,6 +253,7 @@ ScriptedImporter:
     pivot: {x: 0.5283019, y: -0.18604651}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 61
@@ -264,6 +274,7 @@ ScriptedImporter:
     pivot: {x: 0.5283019, y: -0.21428573}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 122
@@ -284,6 +295,7 @@ ScriptedImporter:
     pivot: {x: 0.5370371, y: -0.21428573}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 122
@@ -304,6 +316,7 @@ ScriptedImporter:
     pivot: {x: 0.5283019, y: -0.18604651}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 61
@@ -324,6 +337,7 @@ ScriptedImporter:
     pivot: {x: 0.5283019, y: -0.21428573}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 122
@@ -344,6 +358,7 @@ ScriptedImporter:
     pivot: {x: 0.5283019, y: -0.18604651}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 61
@@ -364,6 +379,7 @@ ScriptedImporter:
     pivot: {x: 0.5576923, y: -0.19047621}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 122
@@ -384,6 +400,7 @@ ScriptedImporter:
     pivot: {x: 0.5882353, y: -0.19047621}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 184
@@ -404,6 +421,7 @@ ScriptedImporter:
     pivot: {x: 0.6, y: -0.19047621}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 184
@@ -424,6 +442,7 @@ ScriptedImporter:
     pivot: {x: 0.6, y: -0.1590909}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 122
@@ -444,6 +463,7 @@ ScriptedImporter:
     pivot: {x: 0.59183675, y: -0.13333334}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -464,6 +484,7 @@ ScriptedImporter:
     pivot: {x: 0.59183675, y: -0.08510639}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -484,6 +505,7 @@ ScriptedImporter:
     pivot: {x: 0.59183675, y: -0.08510639}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -504,6 +526,7 @@ ScriptedImporter:
     pivot: {x: 0.59183675, y: -0.08510639}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -524,6 +547,7 @@ ScriptedImporter:
     pivot: {x: 0.59183675, y: -0.13333334}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -544,6 +568,7 @@ ScriptedImporter:
     pivot: {x: 0.6, y: -0.1590909}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 122
@@ -564,6 +589,7 @@ ScriptedImporter:
     pivot: {x: 0.6, y: -0.19047621}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 184
@@ -584,6 +610,7 @@ ScriptedImporter:
     pivot: {x: 0.5882353, y: -0.19047621}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 184
@@ -604,6 +631,7 @@ ScriptedImporter:
     pivot: {x: 0.5576923, y: -0.19047621}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 122
@@ -624,6 +652,7 @@ ScriptedImporter:
     pivot: {x: 0.5283019, y: -0.18604651}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 61
@@ -644,6 +673,7 @@ ScriptedImporter:
     pivot: {x: 0.5283019, y: -0.18604651}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 61
@@ -664,6 +694,7 @@ ScriptedImporter:
     pivot: {x: 0.5576923, y: -0.19047621}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 184
@@ -684,6 +715,7 @@ ScriptedImporter:
     pivot: {x: 0.5882353, y: -0.19047621}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 184
@@ -704,6 +736,7 @@ ScriptedImporter:
     pivot: {x: 0.6, y: -0.19047621}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 184
@@ -724,6 +757,7 @@ ScriptedImporter:
     pivot: {x: 0.6, y: -0.1590909}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 122
@@ -744,6 +778,7 @@ ScriptedImporter:
     pivot: {x: 0.59183675, y: -0.13333334}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -764,6 +799,7 @@ ScriptedImporter:
     pivot: {x: 0.59183675, y: -0.08510639}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -784,6 +820,7 @@ ScriptedImporter:
     pivot: {x: 0.59183675, y: -0.08510639}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -804,6 +841,7 @@ ScriptedImporter:
     pivot: {x: 0.5283019, y: -0.18604651}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 61
@@ -828,7 +866,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: BirdNew_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -837,7 +875,7 @@ ScriptedImporter:
         width: 53
         height: 43
       spriteId: 4d841875eb0446743ac7e92cc5d1899a
-    - name: BirdNew_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -846,7 +884,7 @@ ScriptedImporter:
         width: 53
         height: 43
       spriteId: 164ee40fa6b55ed40bf7a65591e06d04
-    - name: BirdNew_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -855,7 +893,7 @@ ScriptedImporter:
         width: 53
         height: 42
       spriteId: d51f3e48ba6c589478580fa19394c2d8
-    - name: BirdNew_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -864,7 +902,7 @@ ScriptedImporter:
         width: 53
         height: 42
       spriteId: 0571b57c6e3d26a43b179e0415e60b77
-    - name: BirdNew_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -873,7 +911,7 @@ ScriptedImporter:
         width: 53
         height: 43
       spriteId: 859afa0aea952f7409931373ac7f7196
-    - name: BirdNew_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -882,7 +920,7 @@ ScriptedImporter:
         width: 52
         height: 43
       spriteId: 024ff7c791633354fb9fc3195a6bef43
-    - name: BirdNew_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -891,7 +929,7 @@ ScriptedImporter:
         width: 53
         height: 43
       spriteId: c0ea62544f8cd4b4d9611d67a5e797d6
-    - name: BirdNew_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -900,7 +938,7 @@ ScriptedImporter:
         width: 53
         height: 42
       spriteId: 21ec4234c3598a44f9593cbe78c65ce5
-    - name: BirdNew_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -909,7 +947,7 @@ ScriptedImporter:
         width: 54
         height: 42
       spriteId: ffba517571b724346b36acc76a7556da
-    - name: BirdNew_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -918,7 +956,7 @@ ScriptedImporter:
         width: 53
         height: 43
       spriteId: 245fc2f6a57b91e49aaa80fb3a34a4c6
-    - name: BirdNew_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -927,7 +965,7 @@ ScriptedImporter:
         width: 53
         height: 42
       spriteId: cd5cb5f7a16794246a47c909c10437f2
-    - name: BirdNew_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -936,7 +974,7 @@ ScriptedImporter:
         width: 53
         height: 43
       spriteId: fdb26572cc82c6d47bc4cbca6d975732
-    - name: BirdNew_Frame_12
+    - name: Frame_12
       frameIndex: 12
       additiveSortOrder: 0
       cellRect:
@@ -945,7 +983,7 @@ ScriptedImporter:
         width: 52
         height: 42
       spriteId: 9a6d39c8b1dcde948b4adb2ef210d352
-    - name: BirdNew_Frame_13
+    - name: Frame_13
       frameIndex: 13
       additiveSortOrder: 0
       cellRect:
@@ -954,7 +992,7 @@ ScriptedImporter:
         width: 51
         height: 42
       spriteId: 9401053402402fb4f98583f5cf4671c7
-    - name: BirdNew_Frame_14
+    - name: Frame_14
       frameIndex: 14
       additiveSortOrder: 0
       cellRect:
@@ -963,7 +1001,7 @@ ScriptedImporter:
         width: 50
         height: 42
       spriteId: 5f1ced4414e09d64cbb1adfd58acb841
-    - name: BirdNew_Frame_15
+    - name: Frame_15
       frameIndex: 15
       additiveSortOrder: 0
       cellRect:
@@ -972,7 +1010,7 @@ ScriptedImporter:
         width: 50
         height: 44
       spriteId: 30fd89a98efc95342ba20e9500440649
-    - name: BirdNew_Frame_16
+    - name: Frame_16
       frameIndex: 16
       additiveSortOrder: 0
       cellRect:
@@ -981,7 +1019,7 @@ ScriptedImporter:
         width: 49
         height: 45
       spriteId: 848177ea97f8633489c5074f81e3ed4a
-    - name: BirdNew_Frame_17
+    - name: Frame_17
       frameIndex: 17
       additiveSortOrder: 0
       cellRect:
@@ -990,7 +1028,7 @@ ScriptedImporter:
         width: 49
         height: 47
       spriteId: 4e353dcf11944c34f8baa086b4063c24
-    - name: BirdNew_Frame_18
+    - name: Frame_18
       frameIndex: 18
       additiveSortOrder: 0
       cellRect:
@@ -999,7 +1037,7 @@ ScriptedImporter:
         width: 49
         height: 47
       spriteId: fc0494d722462234f9b9a49977b6b08a
-    - name: BirdNew_Frame_19
+    - name: Frame_19
       frameIndex: 19
       additiveSortOrder: 0
       cellRect:
@@ -1008,7 +1046,7 @@ ScriptedImporter:
         width: 49
         height: 47
       spriteId: 2b6325e3535cd5744a3ce90f6070d6db
-    - name: BirdNew_Frame_20
+    - name: Frame_20
       frameIndex: 20
       additiveSortOrder: 0
       cellRect:
@@ -1017,7 +1055,7 @@ ScriptedImporter:
         width: 49
         height: 45
       spriteId: a86820009ec6c5e478f01e92e6f27e40
-    - name: BirdNew_Frame_21
+    - name: Frame_21
       frameIndex: 21
       additiveSortOrder: 0
       cellRect:
@@ -1026,7 +1064,7 @@ ScriptedImporter:
         width: 50
         height: 44
       spriteId: c3d056432b903754d99dda9e104e0db2
-    - name: BirdNew_Frame_22
+    - name: Frame_22
       frameIndex: 22
       additiveSortOrder: 0
       cellRect:
@@ -1035,7 +1073,7 @@ ScriptedImporter:
         width: 50
         height: 42
       spriteId: b2a98b0d8321ac34fb120dcbad9b11c1
-    - name: BirdNew_Frame_23
+    - name: Frame_23
       frameIndex: 23
       additiveSortOrder: 0
       cellRect:
@@ -1044,7 +1082,7 @@ ScriptedImporter:
         width: 51
         height: 42
       spriteId: 0a9c4f2702dde4342b49b55a2b140373
-    - name: BirdNew_Frame_24
+    - name: Frame_24
       frameIndex: 24
       additiveSortOrder: 0
       cellRect:
@@ -1053,7 +1091,7 @@ ScriptedImporter:
         width: 52
         height: 42
       spriteId: ab6e06d6b01a55d4f8443d56ed9c9c7d
-    - name: BirdNew_Frame_25
+    - name: Frame_25
       frameIndex: 25
       additiveSortOrder: 0
       cellRect:
@@ -1062,7 +1100,7 @@ ScriptedImporter:
         width: 53
         height: 43
       spriteId: 9b189a4174b47a94aabb9f19d0ea260a
-    - name: BirdNew_Frame_26
+    - name: Frame_26
       frameIndex: 26
       additiveSortOrder: 0
       cellRect:
@@ -1071,7 +1109,7 @@ ScriptedImporter:
         width: 53
         height: 43
       spriteId: 07aaef2cc688b0445b4f55f995f6e2ac
-    - name: BirdNew_Frame_27
+    - name: Frame_27
       frameIndex: 27
       additiveSortOrder: 0
       cellRect:
@@ -1080,7 +1118,7 @@ ScriptedImporter:
         width: 52
         height: 42
       spriteId: 17b7b40f360149a4a94ea1f2964c1cfd
-    - name: BirdNew_Frame_28
+    - name: Frame_28
       frameIndex: 28
       additiveSortOrder: 0
       cellRect:
@@ -1089,7 +1127,7 @@ ScriptedImporter:
         width: 51
         height: 42
       spriteId: b8fdc3bf0e9f82d48a60383f26bba68d
-    - name: BirdNew_Frame_29
+    - name: Frame_29
       frameIndex: 29
       additiveSortOrder: 0
       cellRect:
@@ -1098,7 +1136,7 @@ ScriptedImporter:
         width: 50
         height: 42
       spriteId: 6c3012639a02b3741a72d58e6702f9fc
-    - name: BirdNew_Frame_30
+    - name: Frame_30
       frameIndex: 30
       additiveSortOrder: 0
       cellRect:
@@ -1107,7 +1145,7 @@ ScriptedImporter:
         width: 50
         height: 44
       spriteId: 633b591da314ce845a32ea58e88e7ea7
-    - name: BirdNew_Frame_31
+    - name: Frame_31
       frameIndex: 31
       additiveSortOrder: 0
       cellRect:
@@ -1116,7 +1154,7 @@ ScriptedImporter:
         width: 49
         height: 45
       spriteId: 7766446ecf5581e428d2877e8ca0592b
-    - name: BirdNew_Frame_32
+    - name: Frame_32
       frameIndex: 32
       additiveSortOrder: 0
       cellRect:
@@ -1125,7 +1163,7 @@ ScriptedImporter:
         width: 49
         height: 47
       spriteId: 54db86f895bbc1e4699f73632dfe31f9
-    - name: BirdNew_Frame_33
+    - name: Frame_33
       frameIndex: 33
       additiveSortOrder: 0
       cellRect:
@@ -1134,7 +1172,7 @@ ScriptedImporter:
         width: 49
         height: 47
       spriteId: 1e9f44a4c5dd6f545a8622f1c21829a9
-    - name: BirdNew_Frame_34
+    - name: Frame_34
       frameIndex: 34
       additiveSortOrder: 0
       cellRect:
@@ -1148,6 +1186,7 @@ ScriptedImporter:
   platformSettings:
   - name: DefaultTexturePlatform
     overridden: 0
+    ignorePlatformSupport: 0
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1159,6 +1198,7 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   - name: Standalone
     overridden: 0
+    ignorePlatformSupport: 0
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
