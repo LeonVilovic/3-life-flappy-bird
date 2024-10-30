@@ -11,8 +11,8 @@ public class BirdScript : MonoBehaviour
     public Blinking blinking; //connect this in inspector
     bool birdIsAlive = true;
     bool birdIsInvulnerablee = false;
-    float birdIsInvulnerableeTimeLeft = 0f;
-    public float InvulnerabilityTime = 2;
+    float birdIsInvulnerableeTimeLeft = 2f;
+    public float InvulnerabilityTime = 0.01f;
     public float CollisionForceMultiplier;
     public float CollisionForceXAxisFactor;
     public Animator animator;
