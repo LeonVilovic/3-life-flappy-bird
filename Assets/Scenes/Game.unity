@@ -1581,7 +1581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidbody: {fileID: 797524013}
-  flapStrenght: 13.5
+  flapStrenght: 10
   logicManagerScript: {fileID: 0}
   blinking: {fileID: 797524019}
   InvulnerabilityTime: 2
