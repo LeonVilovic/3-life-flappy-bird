@@ -1212,7 +1212,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1762,6 +1762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectForSpawn: {fileID: 2910164782140903997, guid: 818c856b523e6ad43b81c145161a9e16, type: 3}
+  logicManagerScript: {fileID: 0}
   spawnRate: 3.8
 --- !u!4 &803646634
 Transform:
