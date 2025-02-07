@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 using System;
 using Unity.VisualScripting;
 using UnityEngine.SocialPlatforms.Impl;
+using System.IO;
+using Random = System.Random;
 
 public class LogicManagerScript : MonoBehaviour
 {
@@ -16,7 +18,7 @@ public class LogicManagerScript : MonoBehaviour
     public GameObject gameOverScreen;
     public Boolean gravitateToX;
     public float gravitateToXDelayTime = 1.0f;
-    
+    private string filePath;
 
 
 
@@ -25,6 +27,10 @@ public class LogicManagerScript : MonoBehaviour
         //DifficultySettings difficultySettings = DifficultySettings.Instance;  
         gameOverScreen.SetActive(false);
         //TODO
+
+
+        filePath = Path.Combine(Application.persistentDataPath, "highscore.json");
+        Debug.Log("High Score File Path: " + filePath);
 
     }
 
@@ -50,6 +56,7 @@ public class LogicManagerScript : MonoBehaviour
     }
     public void gameOver()
     {
+        SaveHighScore(GenerateRandomName(), playerScore);
         gameOverScreen.SetActive(true);
     }
     public void applicationQuit()
@@ -57,6 +64,90 @@ public class LogicManagerScript : MonoBehaviour
         Application.Quit();
     }
 
+    private static string[] adjectives = {
+    "Brave", "Swift", "Fierce", "Silent", "Lucky", "Mighty", "Shadow", "Thunder", "Wicked", "Clever",
+    "Fearless", "Vengeful", "Stormy", "Blazing", "Phantom", "Ghostly", "Daring", "Savage", "Arcane", "Legendary",
+    "Cunning", "Noble", "Iron", "Glorious", "Epic", "Lunar", "Solar", "Infernal", "Doomed", "Radiant"
+};
+
+    private static string[] firstNames = {
+    "Arin", "Leo", "Nova", "Dante", "Rex", "Kai", "Orion", "Zane", "Luna", "Sage",
+    "Ezra", "Xander", "Juno", "Axel", "Mira", "Kane", "Riven", "Selene", "Talon", "Vera",
+    "Cyrus", "Ember", "Athena", "Draven", "Lyra", "Gideon", "Seraph", "Zyra", "Blaise", "Nyx"
+};
+
+    private static string[] lastNames = {
+    "Storm", "Blackwood", "Dragonsbane", "Hawke", "Nightshade", "Frost", "Wolfe", "Shadowfang", "Raven", "Ironheart",
+    "Duskbane", "Bloodfang", "Moonrider", "Darkmoor", "Firebrand", "Silverclaw", "Grimshaw", "Thunderstrike", "Emberfall", "Voidwalker",
+    "Deathwhisper", "Soulreaper", "Stormrider", "Ruinblade", "Ironfang", "Windchaser", "Frostborn", "Netherbane", "Starborn", "Shadowveil"
+};
+
+    private static Random random = new Random(); 
+
+    public static string GenerateRandomName()
+    {
+        string adjective = adjectives[random.Next(adjectives.Length)];
+        string firstName = firstNames[random.Next(firstNames.Length)];
+        string lastName = lastNames[random.Next(lastNames.Length)];
+        int number = random.Next(10, 99); 
+
+        return $"{adjective}{firstName} {lastName}{number}";
+    }
+
+
+    [System.Serializable]
+    public class HighScoreData
+    {
+        public string playerName;
+        public int highScore;
+        public string timestamp; // Stores date and time
+    }
+
+    [System.Serializable]
+    public class HighScoreList
+    {
+        public List<HighScoreData> scores = new List<HighScoreData>();
+    }
+
+    public void SaveHighScore(string name, int score)
+    {
+        HighScoreList highScoreList = LoadHighScores(); // Load existing scores
+
+        // Create new score entry with current timestamp
+        HighScoreData newScore = new HighScoreData
+        {
+            playerName = name,
+            highScore = score,
+            timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") // Save date & time
+        };
+
+        highScoreList.scores.Add(newScore);
+
+        // Sort scores in descending order (highest first)
+        highScoreList.scores.Sort((a, b) => b.highScore.CompareTo(a.highScore));
+
+        // Keep only the top 10 scores
+        if (highScoreList.scores.Count > 10)
+        {
+            highScoreList.scores.RemoveAt(10);
+        }
+
+        // Save the updated high scores list
+        string json = JsonUtility.ToJson(highScoreList, true);
+        File.WriteAllText(filePath, json);
+
+        Debug.Log("Updated High Scores:\n" + json);
+    }
+
+    public HighScoreList LoadHighScores()
+    {
+        if (File.Exists(filePath))
+        {
+            string json = File.ReadAllText(filePath);
+            return JsonUtility.FromJson<HighScoreList>(json);
+        }
+        return new HighScoreList(); // Return an empty list if no file exists
+    }
 
 
 }
