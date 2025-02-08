@@ -16,6 +16,9 @@ public class LogicManagerScript : MonoBehaviour
     public Text scoreText;
     public Text lifeText;
     public GameObject gameOverScreen;
+    public GameObject hiScoresScreen;
+    public GameObject scoreTextObject;
+    public GameObject lifeTextObject;
     public Boolean gravitateToX;
     public float gravitateToXDelayTime = 1.0f;
     private string filePath;
@@ -26,6 +29,9 @@ public class LogicManagerScript : MonoBehaviour
     {
         //DifficultySettings difficultySettings = DifficultySettings.Instance;  
         gameOverScreen.SetActive(false);
+        hiScoresScreen.SetActive(false);
+        scoreTextObject.SetActive(true);
+        lifeTextObject.SetActive(true);
         //TODO
 
 
@@ -58,6 +64,9 @@ public class LogicManagerScript : MonoBehaviour
     {
         SaveHighScore(GenerateRandomName(), playerScore);
         gameOverScreen.SetActive(true);
+        hiScoresScreen.SetActive(true);
+        scoreTextObject.SetActive(false);
+        lifeTextObject.SetActive(false);
     }
     public void applicationQuit()
     {
@@ -82,14 +91,14 @@ public class LogicManagerScript : MonoBehaviour
     "Deathwhisper", "Soulreaper", "Stormrider", "Ruinblade", "Ironfang", "Windchaser", "Frostborn", "Netherbane", "Starborn", "Shadowveil"
 };
 
-    private static Random random = new Random(); 
+    private static Random random = new Random();
 
     public static string GenerateRandomName()
     {
         string adjective = adjectives[random.Next(adjectives.Length)];
         string firstName = firstNames[random.Next(firstNames.Length)];
         string lastName = lastNames[random.Next(lastNames.Length)];
-        int number = random.Next(10, 99); 
+        int number = random.Next(10, 99);
 
         return $"{adjective}{firstName} {lastName}{number}";
     }
@@ -100,7 +109,8 @@ public class LogicManagerScript : MonoBehaviour
     {
         public string playerName;
         public int highScore;
-        public string timestamp; // Stores date and time
+        public string timestamp;
+        public bool newScore;
     }
 
     [System.Serializable]
@@ -111,32 +121,43 @@ public class LogicManagerScript : MonoBehaviour
 
     public void SaveHighScore(string name, int score)
     {
-        HighScoreList highScoreList = LoadHighScores(); // Load existing scores
+        HighScoreList highScoreList = LoadHighScores();
 
-        // Create new score entry with current timestamp
+
+        foreach (var scoreInList in highScoreList.scores)
+        {
+            scoreInList.newScore = false;
+        }
+
         HighScoreData newScore = new HighScoreData
         {
             playerName = name,
             highScore = score,
-            timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") // Save date & time
+            timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+            newScore = true
         };
 
         highScoreList.scores.Add(newScore);
 
-        // Sort scores in descending order (highest first)
         highScoreList.scores.Sort((a, b) => b.highScore.CompareTo(a.highScore));
 
-        // Keep only the top 10 scores
         if (highScoreList.scores.Count > 10)
         {
             highScoreList.scores.RemoveAt(10);
         }
 
-        // Save the updated high scores list
         string json = JsonUtility.ToJson(highScoreList, true);
+
         File.WriteAllText(filePath, json);
 
         Debug.Log("Updated High Scores:\n" + json);
+
+
+
+
+        Text scoreText = hiScoresScreen.GetComponent<Text>();
+
+        scoreText.text = FormatHighScores(highScoreList);
     }
 
     public HighScoreList LoadHighScores()
@@ -145,9 +166,24 @@ public class LogicManagerScript : MonoBehaviour
         {
             string json = File.ReadAllText(filePath);
             return JsonUtility.FromJson<HighScoreList>(json);
-        }
-        return new HighScoreList(); // Return an empty list if no file exists
-    }
 
+        }
+        return new HighScoreList();
+    }
+    public string FormatHighScores(HighScoreList highScoreList)
+    {
+
+        string formattedScores = "";
+
+        foreach (var score in highScoreList.scores)
+        {
+            string scoreText = score.newScore
+    ? $"<b>{score.highScore}</b>"
+    : $"{score.highScore}";
+
+            formattedScores += $"{scoreText} - {score.playerName} - {score.timestamp}\n";
+        }
+        return formattedScores;
+    }
 
 }
