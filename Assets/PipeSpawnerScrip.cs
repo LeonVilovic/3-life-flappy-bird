@@ -18,16 +18,12 @@ public class PipeSpawnerScrip : MonoBehaviour
     public float SpawnOffset { get => spawnOffset; set => spawnOffset = value; }
     public float Timer { get => timer; set => timer = value; }
 
-
-    // Start is called before the first frame update
     void Start()
     {
         logicManagerScript = GameObject.FindGameObjectWithTag("LogicManager").GetComponent<LogicManagerScript>();
         spawnPipe();
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (timer < spawnRate)
@@ -57,7 +53,7 @@ public class PipeSpawnerScrip : MonoBehaviour
         child1.localPosition += new Vector3(0, -DifficultySettings.Instance.PipeSpawnerPipeWidthOffset, 0);
         child2.localPosition += new Vector3(0, DifficultySettings.Instance.PipeSpawnerPipeWidthOffset, 0);
 
-        UnityEngine.Debug.Log("child1.localPosition & child2.localPosition before spawn " + child1.localPosition +" "+ child2.localPosition);
+        UnityEngine.Debug.Log("child1.localPosition & child2.localPosition before spawn " + child1.localPosition + " " + child2.localPosition);
 
         Instantiate(gameObjectForSpawn, new Vector3(transform.position.x, Random.Range(lowestPoint, highestPoint), 0), transform.rotation);
 

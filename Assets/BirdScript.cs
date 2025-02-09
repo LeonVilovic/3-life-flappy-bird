@@ -17,14 +17,12 @@ public class BirdScript : MonoBehaviour
     public float CollisionForceXAxisFactor;
     public Animator animator;
 
-    // Start is called before the first frame update
     void Start()
     {
         logicManagerScript = GameObject.FindGameObjectWithTag("LogicManager").GetComponent<LogicManagerScript>();
         blinking.isBlinking = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if ((Input.GetKeyDown(KeyCode.Space) == true || Input.touchCount > 0) && birdIsAlive)
@@ -94,8 +92,6 @@ public class BirdScript : MonoBehaviour
             }
         }
 
-
-
         logicManagerScript.gravitateToX = false;
         CancelInvoke("setGravitateToXTrue");
         Invoke("setGravitateToXTrue", logicManagerScript.gravitateToXDelayTime);
@@ -108,8 +104,6 @@ public class BirdScript : MonoBehaviour
             myRigidbody.gravityScale = 6;
             Destroy(GameObject.FindGameObjectWithTag("bottomContainer"));
         }
-
-
 
         Vector2 direction = (transform.position - collision.transform.position).normalized;
 

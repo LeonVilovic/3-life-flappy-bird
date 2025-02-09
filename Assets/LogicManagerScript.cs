@@ -23,7 +23,23 @@ public class LogicManagerScript : MonoBehaviour
     public float gravitateToXDelayTime = 1.0f;
     private string filePath;
 
+    private static string[] adjectives = {
+    "Brave", "Swift", "Fierce", "Silent", "Lucky", "Mighty", "Shadow", "Thunder", "Wicked", "Clever",
+    "Fearless", "Vengeful", "Stormy", "Blazing", "Phantom", "Ghostly", "Daring", "Savage", "Arcane", "Legendary",
+    "Cunning", "Noble", "Iron", "Glorious", "Epic", "Lunar", "Solar", "Infernal", "Doomed", "Radiant"
+};
 
+    private static string[] firstNames = {
+    "Arin", "Leo", "Nova", "Dante", "Rex", "Kai", "Orion", "Zane", "Luna", "Sage",
+    "Ezra", "Xander", "Juno", "Axel", "Mira", "Kane", "Riven", "Selene", "Talon", "Vera",
+    "Cyrus", "Ember", "Athena", "Draven", "Lyra", "Gideon", "Seraph", "Zyra", "Blaise", "Nyx"
+};
+
+    private static string[] lastNames = {
+    "Storm", "Blackwood", "Dragonsbane", "Hawke", "Nightshade", "Frost", "Wolfe", "Shadowfang", "Raven", "Ironheart",
+    "Duskbane", "Bloodfang", "Moonrider", "Darkmoor", "Firebrand", "Silverclaw", "Grimshaw", "Thunderstrike", "Emberfall", "Voidwalker",
+    "Deathwhisper", "Soulreaper", "Stormrider", "Ruinblade", "Ironfang", "Windchaser", "Frostborn", "Netherbane", "Starborn", "Shadowveil"
+};
 
     private void Start()
     {
@@ -34,12 +50,9 @@ public class LogicManagerScript : MonoBehaviour
         lifeTextObject.SetActive(true);
         //TODO
 
-
         filePath = Path.Combine(Application.persistentDataPath, "highscore.json");
         Debug.Log("High Score File Path: " + filePath);
-
     }
-
 
     [ContextMenu("Increase Score")]
     public void addScore()
@@ -74,24 +87,6 @@ public class LogicManagerScript : MonoBehaviour
         Application.Quit();
     }
 
-    private static string[] adjectives = {
-    "Brave", "Swift", "Fierce", "Silent", "Lucky", "Mighty", "Shadow", "Thunder", "Wicked", "Clever",
-    "Fearless", "Vengeful", "Stormy", "Blazing", "Phantom", "Ghostly", "Daring", "Savage", "Arcane", "Legendary",
-    "Cunning", "Noble", "Iron", "Glorious", "Epic", "Lunar", "Solar", "Infernal", "Doomed", "Radiant"
-};
-
-    private static string[] firstNames = {
-    "Arin", "Leo", "Nova", "Dante", "Rex", "Kai", "Orion", "Zane", "Luna", "Sage",
-    "Ezra", "Xander", "Juno", "Axel", "Mira", "Kane", "Riven", "Selene", "Talon", "Vera",
-    "Cyrus", "Ember", "Athena", "Draven", "Lyra", "Gideon", "Seraph", "Zyra", "Blaise", "Nyx"
-};
-
-    private static string[] lastNames = {
-    "Storm", "Blackwood", "Dragonsbane", "Hawke", "Nightshade", "Frost", "Wolfe", "Shadowfang", "Raven", "Ironheart",
-    "Duskbane", "Bloodfang", "Moonrider", "Darkmoor", "Firebrand", "Silverclaw", "Grimshaw", "Thunderstrike", "Emberfall", "Voidwalker",
-    "Deathwhisper", "Soulreaper", "Stormrider", "Ruinblade", "Ironfang", "Windchaser", "Frostborn", "Netherbane", "Starborn", "Shadowveil"
-};
-
     private static Random random = new Random();
 
     public static string GenerateRandomName()
@@ -103,7 +98,6 @@ public class LogicManagerScript : MonoBehaviour
 
         return $"{adjective}{firstName} {lastName}{number}";
     }
-
 
     [System.Serializable]
     public class HighScoreData
@@ -123,7 +117,6 @@ public class LogicManagerScript : MonoBehaviour
     public void SaveHighScore(string name, int score)
     {
         HighScoreList highScoreList = LoadHighScores();
-
 
         foreach (var scoreInList in highScoreList.scores)
         {
@@ -152,9 +145,6 @@ public class LogicManagerScript : MonoBehaviour
         File.WriteAllText(filePath, json);
 
         Debug.Log("Updated High Scores:\n" + json);
-
-
-
 
         Text scoreText = hiScoresScreen.GetComponent<Text>();
 

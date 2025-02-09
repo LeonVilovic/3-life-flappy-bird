@@ -7,15 +7,11 @@ public class BackgroundControler : MonoBehaviour
 
     private float startPosition, length;
     public float paralaxEffect;
-
-    // Start is called before the first frame update
     void Start()
     {
         startPosition = transform.position.x;
         length = GetComponent<SpriteRenderer>().bounds.size.x;
     }
-
-    // Update is called once per frame
     void Update()
     {
         float distance = transform.position.x - paralaxEffect * Time.deltaTime;

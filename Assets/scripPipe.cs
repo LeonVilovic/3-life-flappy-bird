@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class scripPipe : MonoBehaviour
 {
-    public float moveSpeed = 5;
+    public float moveSpeed = 4;
     public float deadZone = -45;
 
     void Start()
@@ -17,7 +17,6 @@ public class scripPipe : MonoBehaviour
 
         if (transform.position.x < deadZone)
         {
-            
             //Debug.Log($"Pipe destroyed");
             Destroy(gameObject);
         }
