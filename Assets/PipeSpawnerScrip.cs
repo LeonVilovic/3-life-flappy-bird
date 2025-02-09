@@ -48,26 +48,24 @@ public class PipeSpawnerScrip : MonoBehaviour
         float lowestPoint = transform.position.y - SpawnOffset;
         float highestPoint = transform.position.y + SpawnOffset;
 
-
         Transform child1 = gameObjectForSpawn.transform.GetChild(0);
         Transform child2 = gameObjectForSpawn.transform.GetChild(1);
         Transform child3 = gameObjectForSpawn.transform.GetChild(2);
 
-        UnityEngine.Debug.Log("DifficultySettings.Instance.PipeSpawnerPipeOffset: " + DifficultySettings.Instance.PipeSpawnerPipeOffset);
+        UnityEngine.Debug.Log("DifficultySettings.Instance.PipeSpawnerPipeOffset: " + DifficultySettings.Instance.PipeSpawnerPipeWidthOffset);
 
-        child1.localPosition += new Vector3(0, -DifficultySettings.Instance.PipeSpawnerPipeOffset, 0);
-        child2.localPosition += new Vector3(0, DifficultySettings.Instance.PipeSpawnerPipeOffset, 0);
+        child1.localPosition += new Vector3(0, -DifficultySettings.Instance.PipeSpawnerPipeWidthOffset, 0);
+        child2.localPosition += new Vector3(0, DifficultySettings.Instance.PipeSpawnerPipeWidthOffset, 0);
 
-        UnityEngine.Debug.Log("child1.localPosition " + child1.localPosition);
-        UnityEngine.Debug.Log("child2.localPosition " + child2.localPosition);
+        UnityEngine.Debug.Log("child1.localPosition & child2.localPosition before spawn " + child1.localPosition +" "+ child2.localPosition);
 
         Instantiate(gameObjectForSpawn, new Vector3(transform.position.x, Random.Range(lowestPoint, highestPoint), 0), transform.rotation);
 
         //if you dont return gameObjectForSpawn to its initial state the prefab gets alterd in next execution
-        child1.localPosition += new Vector3(0, DifficultySettings.Instance.PipeSpawnerPipeOffset, 0);
-        child2.localPosition += new Vector3(0, -DifficultySettings.Instance.PipeSpawnerPipeOffset, 0);
- 
+        child1.localPosition += new Vector3(0, DifficultySettings.Instance.PipeSpawnerPipeWidthOffset, 0);
+        child2.localPosition += new Vector3(0, -DifficultySettings.Instance.PipeSpawnerPipeWidthOffset, 0);
 
+        UnityEngine.Debug.Log("child1.localPosition & child2.localPosition master prefab" + child1.localPosition + " " + child2.localPosition);
 
     }
 }

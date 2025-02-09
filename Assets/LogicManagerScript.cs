@@ -63,6 +63,7 @@ public class LogicManagerScript : MonoBehaviour
     public void gameOver()
     {
         SaveHighScore(GenerateRandomName(), playerScore);
+        DifficultySettings.Instance.resetDifficultyToDefault();
         gameOverScreen.SetActive(true);
         hiScoresScreen.SetActive(true);
         scoreTextObject.SetActive(false);
