@@ -32,14 +32,21 @@ public class LogicManagerScript : MonoBehaviour
     private static string[] firstNames = {
     "Arin", "Leo", "Nova", "Dante", "Rex", "Kai", "Orion", "Zane", "Luna", "Sage",
     "Ezra", "Xander", "Juno", "Axel", "Mira", "Kane", "Riven", "Selene", "Talon", "Vera",
-    "Cyrus", "Ember", "Athena", "Draven", "Lyra", "Gideon", "Seraph", "Zyra", "Blaise", "Nyx"
+    "Cyrus", "Ember", "Athena", "Draven", "Lyra", "Gideon", "Seraph", "Zyra", "Blaise", "Nyx",
+    "Finn", "Aurora", "Skye", "Kira", "Jax", "Rowan", "Milo", "Phoenix", "Cleo", "Ash",
+    "Soren", "Lyric", "Faye", "Quinn", "Atlas", "Leif", "Sable", "Rune", "Rhea", "Ryder",
+    "Cassian", "Zephyr", "Vale", "Indigo", "Storm", "Vesper", "Nyssa", "Echo", "Aspen", "River"
 };
 
     private static string[] lastNames = {
     "Storm", "Blackwood", "Dragonsbane", "Hawke", "Nightshade", "Frost", "Wolfe", "Shadowfang", "Raven", "Ironheart",
     "Duskbane", "Bloodfang", "Moonrider", "Darkmoor", "Firebrand", "Silverclaw", "Grimshaw", "Thunderstrike", "Emberfall", "Voidwalker",
-    "Deathwhisper", "Soulreaper", "Stormrider", "Ruinblade", "Ironfang", "Windchaser", "Frostborn", "Netherbane", "Starborn", "Shadowveil"
+    "Deathwhisper", "Soulreaper", "Stormrider", "Ruinblade", "Ironfang", "Windchaser", "Frostborn", "Netherbane", "Starborn", "Shadowveil",
+    "Skylark", "Nightstalker", "Ashthorne", "Winterbane", "Drake", "Hollows", "Gravekeeper", "Riftwalker", "Bloodstone", "Falconcrest",
+    "Stormbreaker", "Ironclad", "Viperfang", "Shadewalker", "Evermore", "Darkspire", "Runeblade", "Mournwind", "Hellfire", "Flameborne",
+    "Thunderclap", "Ghostmane", "Wildwood", "Blackstone", "Wolfhunter", "Bloodhawk", "Mistwalker", "Blackspire", "Shadowrend", "Frostwolf"
 };
+
 
     private void Start()
     {
