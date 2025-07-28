@@ -6,7 +6,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "C:/Users/vilov/3-life-flappy-bird/.utmp/RelWithDebInfo/1ik711p4/armeabi-v7a/CMakeFiles/3.22.1-g37088a8-dirty/CMakeSystem.cmake"
+			"path" : "C:/Users/vilov/3-life-flappy-bird/.utmp/RelWithDebInfo/1ik711p4/arm64-v8a/CMakeFiles/3.22.1-g37088a8-dirty/CMakeSystem.cmake"
 		},
 		{
 			"isExternal" : true,
@@ -36,11 +36,11 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "C:/Users/vilov/3-life-flappy-bird/.utmp/RelWithDebInfo/1ik711p4/armeabi-v7a/CMakeFiles/3.22.1-g37088a8-dirty/CMakeCCompiler.cmake"
+			"path" : "C:/Users/vilov/3-life-flappy-bird/.utmp/RelWithDebInfo/1ik711p4/arm64-v8a/CMakeFiles/3.22.1-g37088a8-dirty/CMakeCCompiler.cmake"
 		},
 		{
 			"isGenerated" : true,
-			"path" : "C:/Users/vilov/3-life-flappy-bird/.utmp/RelWithDebInfo/1ik711p4/armeabi-v7a/CMakeFiles/3.22.1-g37088a8-dirty/CMakeCXXCompiler.cmake"
+			"path" : "C:/Users/vilov/3-life-flappy-bird/.utmp/RelWithDebInfo/1ik711p4/arm64-v8a/CMakeFiles/3.22.1-g37088a8-dirty/CMakeCXXCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -187,18 +187,18 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "C:/Users/vilov/3-life-flappy-bird/.utmp/RelWithDebInfo/1ik711p4/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/games-frame-pacing/games-frame-pacingConfigVersion.cmake"
+			"path" : "C:/Users/vilov/3-life-flappy-bird/.utmp/RelWithDebInfo/1ik711p4/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/games-frame-pacing/games-frame-pacingConfigVersion.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "C:/Users/vilov/3-life-flappy-bird/.utmp/RelWithDebInfo/1ik711p4/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/games-frame-pacing/games-frame-pacingConfig.cmake"
+			"path" : "C:/Users/vilov/3-life-flappy-bird/.utmp/RelWithDebInfo/1ik711p4/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/games-frame-pacing/games-frame-pacingConfig.cmake"
 		}
 	],
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "C:/Users/vilov/3-life-flappy-bird/.utmp/RelWithDebInfo/1ik711p4/armeabi-v7a",
-		"source" : "C:/Users/vilov/3-life-flappy-bird/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/cpp"
+		"build" : "C:/Users/vilov/3-life-flappy-bird/.utmp/RelWithDebInfo/1ik711p4/arm64-v8a",
+		"source" : "C:/Users/vilov/3-life-flappy-bird/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp"
 	},
 	"version" : 
 	{
