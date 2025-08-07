@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1680
     height: 967
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Hierarchy
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 40
+  controlID: 56
   draggingID: 0
 --- !u!114 &3
 MonoBehaviour:
@@ -282,7 +282,7 @@ MonoBehaviour:
   - {fileID: 21}
   - {fileID: 12}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 1
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -342,7 +342,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 568
-    width: 1345
+    width: 1344
     height: 396
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -369,7 +369,7 @@ MonoBehaviour:
   m_UseMipMap: 0
   m_SimulatorState:
     controlPanelVisible: 0
-    controlPanelWidth: NaN
+    controlPanelWidth: 0
     controlPanelFoldoutKeys:
     - UnityEditor.DeviceSimulation.ApplicationSettingsPlugin
     controlPanelFoldoutValues: 00
@@ -423,7 +423,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 38958
+  m_LastSelectedObjectID: 33878
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -560,7 +560,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/SpriteS
+    - Assets
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -570,16 +570,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/SpriteS
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\vilov\3-life-flappy-bird
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 06870000
-    m_LastClickedID: 34566
-    m_ExpandedIDs: 000000008e860000908600009286000000ca9a3b
+    m_SelectedIDs: 8c860000
+    m_LastClickedID: 34444
+    m_ExpandedIDs: 000000008c8600008e8600009086000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -608,7 +608,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000008e8600009086000092860000
+    m_ExpandedIDs: 000000008c8600008e86000090860000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -636,8 +636,8 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c6230000465f00009e710000b071000000000000c67100003c600000c85f00000c710000fe5e00000c870000
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c6230000465f00009e710000b071000000000000c67100003c600000c85f00000c710000fe5e00000c87000028850000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1346,9 +1346,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 54.188934, y: 49.241188, z: -0.33447722}
+    m_Target: {x: -18.700756, y: 16.841871, z: -0.44143468}
     speed: 2
-    m_Value: {x: 54.188934, y: 49.241188, z: -0.33447722}
+    m_Value: {x: 0, y: 0.10000038, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1398,9 +1398,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 43.44654
+    m_Target: 54.142292
     speed: 2
-    m_Value: 43.44654
+    m_Value: 26.3729
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1454,7 +1454,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 568
-    width: 1345
+    width: 1344
     height: 396
   m_SerializedDataModeController:
     m_DataMode: 0

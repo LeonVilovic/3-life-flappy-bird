@@ -23,6 +23,7 @@ public class DifficultySettings
     private int[] scoreThresholdArr = new int[] { 900, 1500, 2200, 3000 };
     private int scoreThresholdIndex = 0;
     private PipeSpawnerScrip PipeSpawner = null;
+    private PipeTransformScript PipeTransform = null;
 
     public int CurrentScoreThreshold { get => currentScoreThreshold; set => currentScoreThreshold = value; }
     public float ScoreDifficultyMultiplier { get => scoreDifficultyMultiplier; set => scoreDifficultyMultiplier = value; }
@@ -39,6 +40,20 @@ public class DifficultySettings
         if (PipeSpawner.spawnRate > 1.5) { PipeSpawner.spawnRate = PipeSpawner.spawnRate * 0.965f; }
 
         Debug.Log("PipeSpawner.SpawnRate updated: " + PipeSpawner.spawnRate);
+
+    }
+
+    // Not in use atm
+    public void increasePipeTransformSpeed()
+    {
+       // if (PipeTransform == null)
+       //    PipeTransform = GameObject.FindGameObjectWithTag("PipeTransformScript").GetComponent<PipeTransformScript>();
+       // Debug.Log("PipeTransform reference: " + PipeTransform);
+
+        //PipeSpawner.spawnRate = PipeSpawner.spawnRate - 0.1f;
+        //if (PipeSpawner.spawnRate > 1.5) { PipeSpawner.spawnRate = PipeSpawner.spawnRate * 0.965f; }
+
+        //Debug.Log("PipeSpawner.SpawnRate updated: " + PipeSpawner.spawnRate);
 
     }
 
@@ -61,6 +76,8 @@ public class DifficultySettings
         }
         increasePipeSpawnSpeed();
         increasePipeSpawnerPipeWidthOffset();
+        //increasePipeTransformSpeed();
+
         Debug.Log("increaseDifficulty() currentScoreThreshold: " + currentScoreThreshold.ToString() + " scoreDifficultyMultiplier: " + scoreDifficultyMultiplier + " scoreThresholdIndex: " + scoreThresholdIndex + " PipeSpawnerPipeOffset(): " + pipeSpawnerPipeWidthOffset.ToString());
     }
 

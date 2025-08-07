@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class scripPipe : MonoBehaviour
+public class PipeTransformScript : MonoBehaviour
 {
     public float moveSpeed = 4;
     public float deadZone = -45;
 
     void Start()
     {
-        
+        Debug.Log($"PipeTransformScript prams: moveSpeed - " + moveSpeed + " dead zone - ");
     }
     void Update()
     {
