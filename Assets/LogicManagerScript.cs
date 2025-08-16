@@ -14,11 +14,11 @@ public class LogicManagerScript : MonoBehaviour
     public int playerScore;
     public int lifePoints;
     public Text scoreText;
-    public Text lifeText;
+    //public Text lifeText;
     public GameObject gameOverScreen;
     public GameObject hiScoresScreen;
     public GameObject scoreTextObject;
-    public GameObject lifeTextObject;
+    //public GameObject lifeTextObject;
     public Boolean gravitateToX;
     public float gravitateToXDelayTime = 1.0f;
     private string filePath;
@@ -54,7 +54,7 @@ public class LogicManagerScript : MonoBehaviour
         gameOverScreen.SetActive(false);
         hiScoresScreen.SetActive(false);
         scoreTextObject.SetActive(true);
-        lifeTextObject.SetActive(true);
+        //lifeTextObject.SetActive(true);
         //TODO
 
         filePath = Path.Combine(Application.persistentDataPath, "highscore.json");
@@ -72,7 +72,34 @@ public class LogicManagerScript : MonoBehaviour
     public void reduceLifePoints()
     {
         lifePoints = lifePoints - 1;
-        lifeText.text = lifePoints.ToString();
+        //lifeText.text = lifePoints.ToString();
+        switch (lifePoints)
+        {
+            case 2:
+                GameObject heart3 = GameObject.Find("heartUI_3");
+                if (heart3 != null)
+                {
+                    Destroy(heart3);
+                }
+                break;
+            case 1:
+                GameObject heart2 = GameObject.Find("heartUI_2");
+                if (heart2 != null)
+                {
+                    Destroy(heart2);
+                }
+                break;
+            case 0:
+                GameObject heart1 = GameObject.Find("heartUI_1");
+                if (heart1 != null)
+                {
+                    Destroy(heart1);
+                }
+                break;
+            default:
+                Console.WriteLine("Invalid life points value.");
+                break;
+        }
     }
 
     public void restartGame()
@@ -87,7 +114,7 @@ public class LogicManagerScript : MonoBehaviour
         gameOverScreen.SetActive(true);
         hiScoresScreen.SetActive(true);
         scoreTextObject.SetActive(false);
-        lifeTextObject.SetActive(false);
+        //lifeTextObject.SetActive(false);
     }
     public void applicationQuit()
     {
