@@ -18,9 +18,9 @@ public class BannerAd : MonoBehaviour
         AdManagerAdRequest request = new AdManagerAdRequest();
 
         // Optional: customize request
-        request.PublisherProvidedId = "example_id";
-        request.CustomTargeting.Add("key", "value");
-        request.CategoryExclusions.Add("category_label");
+        //request.PublisherProvidedId = "example_id";
+        //request.CustomTargeting.Add("key", "value");
+        //request.CategoryExclusions.Add("category_label");
 
         bannerView.LoadAd(request);
     }
