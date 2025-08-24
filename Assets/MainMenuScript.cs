@@ -1,23 +1,31 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float inputDelay = 2f; // Seconds to wait before input works
+    private bool canInput = false;
+
     void Start()
     {
-        
+        // Start a coroutine to enable input after delay
+        StartCoroutine(EnableInputAfterDelay());
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.Space) == true || Input.touchCount > 0))
+        if (!canInput) return;
+
+        if (Input.GetKeyDown(KeyCode.Space) || Input.touchCount > 0)
         {
             SceneManager.LoadScene("Game");
-
         }
+    }
+
+    IEnumerator EnableInputAfterDelay()
+    {
+        yield return new WaitForSeconds(inputDelay);
+        canInput = true;
     }
 }

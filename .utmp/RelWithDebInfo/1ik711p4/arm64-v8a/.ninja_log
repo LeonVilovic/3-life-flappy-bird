@@ -1,5 +1,5 @@
 # ninja log v5
-2	141	7753942455273240	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	c1725367f885a5d5
-141	263	7753942456492008	C:/Users/vilov/3-life-flappy-bird/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1ik711p4/obj/arm64-v8a/libswappywrapper.so	9aa9f9663c340685
-6	855	7771340671709039	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	c1725367f885a5d5
-856	1211	7771340675268773	C:/Users/vilov/3-life-flappy-bird/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1ik711p4/obj/arm64-v8a/libswappywrapper.so	9aa9f9663c340685
+4	402	7777380402616132	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	c1725367f885a5d5
+402	624	7777380404819072	C:/Users/vilov/3-life-flappy-bird/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1ik711p4/obj/arm64-v8a/libswappywrapper.so	9aa9f9663c340685
+1	143	7777384185959351	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	c1725367f885a5d5
+143	280	7777384187317209	C:/Users/vilov/3-life-flappy-bird/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1ik711p4/obj/arm64-v8a/libswappywrapper.so	9aa9f9663c340685
