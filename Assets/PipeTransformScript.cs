@@ -9,7 +9,7 @@ public class PipeTransformScript : MonoBehaviour
 
     void Start()
     {
-        Debug.Log($"PipeTransformScript prams: moveSpeed - " + moveSpeed + " dead zone - ");
+        //Debug.Log($"PipeTransformScript prams: moveSpeed - " + moveSpeed + " dead zone - ");
     }
     void Update()
     {

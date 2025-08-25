@@ -1,10 +1,19 @@
-using UnityEngine;
 using GoogleMobileAds.Api;
 using GoogleMobileAds.Api.AdManager;
+using System.IO;
+using UnityEngine;
+
+
+[System.Serializable]
+public class AdConfig2
+{
+    public string adUnitId;
+}
 
 public class BannerAd : MonoBehaviour
 {
     private BannerView bannerView;
+    private AdConfig2 adConfig;
 
     void Start()
     {
@@ -25,10 +34,26 @@ public class BannerAd : MonoBehaviour
             // use MobileAdsEventExecutor.ExecuteInUpdate(). For more information, see:
             // https://developers.google.com/admob/unity/global-settings#raise_ad_events_on_the_unity_main_thread
         });
+        // Ensure all ad events are raised on Unity main thread
+        MobileAds.RaiseAdEventsOnUnityMainThread = true;
 
-        string adUnitId = "ca-app-pub-3940256099942544/6300978111"; // Test ID
+        // Load JSON from StreamingAssets
+        string path = Path.Combine(Application.streamingAssetsPath, "adConfig.json");
+        if (File.Exists(path))
+        {
+            string jsonString = File.ReadAllText(path);
+            adConfig = JsonUtility.FromJson<AdConfig2>(jsonString);
+            Debug.Log("Loaded AdConfig JSON: " + jsonString);
+        }
+        else
+        {
+            Debug.LogError("adConfig.json not found at path: " + path);
+            return;
+        }
 
-        bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
+        //string adUnitId = "ca-app-pub-3940256099942544/6300978111"; // Test ID
+
+        bannerView = new BannerView(adConfig.adUnitId, AdSize.Banner, AdPosition.Bottom);
 
         // Instead of Builder, just create a plain AdManagerAdRequest
         AdManagerAdRequest request = new AdManagerAdRequest();

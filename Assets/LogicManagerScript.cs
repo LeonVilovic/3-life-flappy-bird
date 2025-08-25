@@ -50,6 +50,7 @@ public class LogicManagerScript : MonoBehaviour
 
     private void Start()
     {
+        AdManager.Instance.LoadInterstitialAd();
         //DifficultySettings difficultySettings = DifficultySettings.Instance;  
         gameOverScreen.SetActive(false);
         hiScoresScreen.SetActive(false);
@@ -104,6 +105,7 @@ public class LogicManagerScript : MonoBehaviour
 
     public void restartGame()
     {
+        AdManager.Instance.ShowInterstitialAd();
         Debug.Log("restartGame() function triggerd");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

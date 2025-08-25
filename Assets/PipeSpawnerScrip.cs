@@ -48,12 +48,12 @@ public class PipeSpawnerScrip : MonoBehaviour
         Transform child2 = gameObjectForSpawn.transform.GetChild(1);
         Transform child3 = gameObjectForSpawn.transform.GetChild(2);
 
-        UnityEngine.Debug.Log("DifficultySettings.Instance.PipeSpawnerPipeOffset: " + DifficultySettings.Instance.PipeSpawnerPipeWidthOffset);
+        //UnityEngine.Debug.Log("DifficultySettings.Instance.PipeSpawnerPipeOffset: " + DifficultySettings.Instance.PipeSpawnerPipeWidthOffset);
 
         child1.localPosition += new Vector3(0, -DifficultySettings.Instance.PipeSpawnerPipeWidthOffset, 0);
         child2.localPosition += new Vector3(0, DifficultySettings.Instance.PipeSpawnerPipeWidthOffset, 0);
 
-        UnityEngine.Debug.Log("child1.localPosition & child2.localPosition before spawn " + child1.localPosition + " " + child2.localPosition);
+        //UnityEngine.Debug.Log("child1.localPosition & child2.localPosition before spawn " + child1.localPosition + " " + child2.localPosition);
 
         Instantiate(gameObjectForSpawn, new Vector3(transform.position.x, Random.Range(lowestPoint, highestPoint), 0), transform.rotation);
 
@@ -61,7 +61,7 @@ public class PipeSpawnerScrip : MonoBehaviour
         child1.localPosition += new Vector3(0, DifficultySettings.Instance.PipeSpawnerPipeWidthOffset, 0);
         child2.localPosition += new Vector3(0, -DifficultySettings.Instance.PipeSpawnerPipeWidthOffset, 0);
 
-        UnityEngine.Debug.Log("child1.localPosition & child2.localPosition master prefab" + child1.localPosition + " " + child2.localPosition);
+        //UnityEngine.Debug.Log("child1.localPosition & child2.localPosition master prefab" + child1.localPosition + " " + child2.localPosition);
 
     }
 }
