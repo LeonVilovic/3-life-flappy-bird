@@ -59,5 +59,11 @@ sysinfo.txt
 crashlytics-build.properties
 
 # ignore files with apps google adUnitId-s 
-Assets/StreamingAssets/adConfig.json
-Assets/StreamingAssets/adConfig.json.meta
+Assets/AdsConfig.cs
+
+# temp files ?
+/.utmp/RelWithDebInfo
+
+# Unity user settings
+/UserSettings
+

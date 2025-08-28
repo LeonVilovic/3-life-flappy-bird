@@ -23,7 +23,7 @@ public class DifficultySettings
     private int[] scoreThresholdArr = new int[] { 900, 1500, 2200, 3000 };
     private int scoreThresholdIndex = 0;
     private PipeSpawnerScrip PipeSpawner = null;
-    private PipeTransformScript PipeTransform = null;
+    //private PipeTransformScript PipeTransform = null;
 
     public int CurrentScoreThreshold { get => currentScoreThreshold; set => currentScoreThreshold = value; }
     public float ScoreDifficultyMultiplier { get => scoreDifficultyMultiplier; set => scoreDifficultyMultiplier = value; }
