@@ -3,7 +3,7 @@ using GoogleMobileAds.Api.AdManager;
 using System.IO;
 using UnityEngine;
 
-public class AdManager : MonoBehaviour
+public class AdManager
 {
     private static AdManager instance = null;
     private AdManager() { }
@@ -17,17 +17,14 @@ public class AdManager : MonoBehaviour
         }
     }
 
-    private AdsConfig adsConfig;
-
     private InterstitialAd interstitial;
 
     private BannerView bannerView;
 
-    private const string adUnitIdInterstitial = "ca-app-pub-3940256099942544/1033173712"; // Test ID
-    private const string adUnitIdBanner = "ca-app-pub-3940256099942544/6300978111"; // Test ID
-    //private const string adUnitId = "ca-app-pub-3940256099942544/6300978111"; // Test ID
+    //private const string adUnitIdInterstitial = "ca-app-pub-3940256099942544/1033173712"; // Test ID
+    //private const string adUnitIdBanner = "ca-app-pub-3940256099942544/6300978111"; // Test ID
 
-    public void InitializeMobileAdsAndRaiseAdEvents()
+    public void InitializeMobileAds()
     {
         MobileAds.Initialize((InitializationStatus initstatus) =>
         {
@@ -44,15 +41,33 @@ public class AdManager : MonoBehaviour
             // use MobileAdsEventExecutor.ExecuteInUpdate(). For more information, see:
             // https://developers.google.com/admob/unity/global-settings#raise_ad_events_on_the_unity_main_thread
         });
-        // Ensure all ad events are raised on Unity main thread
+    }
+    public void EnableRaiseAdEventsOnUnityMainThread()
+    {
+
         MobileAds.RaiseAdEventsOnUnityMainThread = true;
+    }
+    public void ShowAdInspector()
+    {
+        MobileAds.OpenAdInspector(error =>
+        {
+            if (error != null)
+            {
+                Debug.LogError("Ad Inspector failed: " + error);
+            }
+            else
+            {
+                Debug.Log("Ad Inspector opened successfully.");
+            }
+        });
     }
 
     public void LoadInterstitialAd()
     {
-        var adRequest = new AdRequest();
+        //var adRequest = new AdRequest();
+        var adRequest = new AdManagerAdRequest();
 
-        InterstitialAd.Load(adUnitIdInterstitial, adRequest,
+        InterstitialAd.Load(AdsConfig.AdUnitIdInterstitial, adRequest,
             (InterstitialAd ad, LoadAdError error) =>
             {
                 if (error != null)
@@ -100,7 +115,7 @@ public class AdManager : MonoBehaviour
 
     public void LoadAndShowBannerAd()
     {
-        bannerView = new BannerView(adUnitIdBanner, AdSize.Banner, AdPosition.Bottom);
+        bannerView = new BannerView(AdsConfig.AdUnitIdBanner, AdSize.Banner, AdPosition.Bottom);
 
         // Instead of Builder, just create a plain AdManagerAdRequest
         AdManagerAdRequest request = new AdManagerAdRequest();
@@ -113,8 +128,4 @@ public class AdManager : MonoBehaviour
         bannerView.LoadAd(request);
     }
 
-    private void OnDestroy()
-    {
-        interstitial?.Destroy();
-    }
 }
