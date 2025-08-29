@@ -17,12 +17,9 @@ public class AdManager
         }
     }
 
-    private InterstitialAd interstitial;
+    private InterstitialAd interstitialAd;
 
     private BannerView bannerView;
-
-    //private const string adUnitIdInterstitial = "ca-app-pub-3940256099942544/1033173712"; // Test ID
-    //private const string adUnitIdBanner = "ca-app-pub-3940256099942544/6300978111"; // Test ID
 
     public void InitializeMobileAds()
     {
@@ -62,9 +59,9 @@ public class AdManager
         });
     }
 
-    public void LoadInterstitialAd()
+    public void InterstitialAdLoad()
     {
-        //var adRequest = new AdRequest();
+        //you can call this function only once
         var adRequest = new AdManagerAdRequest();
 
         InterstitialAd.Load(AdsConfig.AdUnitIdInterstitial, adRequest,
@@ -83,28 +80,27 @@ public class AdManager
                 }
 
                 // Assign the loaded ad to your member variable
-                interstitial = ad;
+                interstitialAd = ad;
 
                 // Register event handlers for this ad
-                interstitial.OnAdFullScreenContentOpened += () => Debug.Log("Ad opened");
-                interstitial.OnAdFullScreenContentClosed += () =>
+                interstitialAd.OnAdFullScreenContentOpened += () => Debug.Log("Ad opened");
+                interstitialAd.OnAdFullScreenContentClosed += () =>
                 {
                     Debug.Log("Ad closed, loading a new one...");
-                    interstitial.Destroy();
-                    interstitial = null;
-                    LoadInterstitialAd(); // preload next ad
+                    interstitialAd.Destroy();
+                    interstitialAd = null;
+                    InterstitialAdLoad(); // preload next ad
                 };
 
                 Debug.Log("Interstitial ad loaded successfully!");
             });
     }
 
-    public void ShowInterstitialAd()
+    public void InterstitialAdShow()
     {
-        //if (interstitial != null)
-        if (interstitial != null && interstitial.CanShowAd())
+        if (interstitialAd != null && interstitialAd.CanShowAd())
         {
-            interstitial.Show();
+            interstitialAd.Show();
             Debug.Log("ShowInterstitialAd() - interstitial.Show(); triggerd");
         }
         else
@@ -113,11 +109,10 @@ public class AdManager
         }
     }
 
-    public void LoadAndShowBannerAd()
+    public void BannerAdLoadAndShow()
     {
-        bannerView = new BannerView(AdsConfig.AdUnitIdBanner, AdSize.Banner, AdPosition.Bottom);
+        bannerView = new BannerView(AdsConfig.AdUnitIdBanner, AdSize.Banner, AdPosition.Top);
 
-        // Instead of Builder, just create a plain AdManagerAdRequest
         AdManagerAdRequest request = new AdManagerAdRequest();
 
         // Optional: customize request
@@ -126,6 +121,11 @@ public class AdManager
         //request.CategoryExclusions.Add("category_label");
 
         bannerView.LoadAd(request);
+        
     }
-
+    public void BannerAdDestroy()
+    {
+        bannerView.Destroy();  
+    }
+    
 }

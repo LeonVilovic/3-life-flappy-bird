@@ -78,17 +78,26 @@ public class BirdScript : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        //Debug.Log($"triggered OnCollisionEnter2D for bird");
+        BirdCollisionLogic(collision);
+    }
 
+    public void OnCollisionStay2D(Collision2D collision)
+    {
+        BirdCollisionLogic(collision);
+    }
+
+    private void BirdCollisionLogic(Collision2D collision)
+    {
+        //Debug.Log($"triggered OnCollisionEnter2D for bird");
 
         if (!birdIsInvulnerablee)
         {
-        logicManagerScript.reduceLifePoints();
+            logicManagerScript.reduceLifePoints();
             if (logicManagerScript.lifePoints > 0)
             {
-            birdIsInvulnerablee = true;
-            birdIsInvulnerableeTimeLeft = InvulnerabilityTime;
-            blinking.isBlinking = true;
+                birdIsInvulnerablee = true;
+                birdIsInvulnerableeTimeLeft = InvulnerabilityTime;
+                blinking.isBlinking = true;
             }
         }
 

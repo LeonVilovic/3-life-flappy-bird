@@ -7,8 +7,9 @@ public class MainMenuAdsInit : MonoBehaviour
     {
         AdManager.Instance.InitializeMobileAds();
         AdManager.Instance.EnableRaiseAdEventsOnUnityMainThread();
-        AdManager.Instance.ShowAdInspector();
-        AdManager.Instance.LoadAndShowBannerAd();
+        //AdManager.Instance.ShowAdInspector();
+        AdManager.Instance.BannerAdLoadAndShow();
+        AdManager.Instance.InterstitialAdLoad();
     }
 
     // Update is called once per frame

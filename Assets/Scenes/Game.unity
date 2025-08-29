@@ -439,11 +439,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 64
+    m_FontSize: 48
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 64
+    m_MinSize: 4
+    m_MaxSize: 69
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1214,11 +1214,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 55
+    m_FontSize: 64
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 55
+    m_MaxSize: 64
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -2141,6 +2141,7 @@ MonoBehaviour:
   scoreTextObject: {fileID: 1323527601}
   gravitateToX: 0
   gravitateToXDelayTime: 1
+  playerScoreAdChanceThreshold: 4000
 --- !u!4 &871003496
 Transform:
   m_ObjectHideFlags: 0
@@ -2636,7 +2637,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -16.000061, y: -338.00003}
-  m_SizeDelta: {x: 569.58, y: 134.816}
+  m_SizeDelta: {x: 800, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1172552034
 MonoBehaviour:
@@ -3282,7 +3283,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -16, y: -460}
-  m_SizeDelta: {x: 420.375, y: 78.82}
+  m_SizeDelta: {x: 372.6, y: 68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1880182226
 MonoBehaviour:

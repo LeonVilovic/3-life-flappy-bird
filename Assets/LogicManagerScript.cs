@@ -21,6 +21,7 @@ public class LogicManagerScript : MonoBehaviour
     //public GameObject lifeTextObject;
     public Boolean gravitateToX;
     public float gravitateToXDelayTime = 1.0f;
+    public int playerScoreAdChanceThreshold = 4000;
     private string filePath;
 
     private static string[] adjectives = {
@@ -47,10 +48,11 @@ public class LogicManagerScript : MonoBehaviour
     "Thunderclap", "Ghostmane", "Wildwood", "Blackstone", "Wolfhunter", "Bloodhawk", "Mistwalker", "Blackspire", "Shadowrend", "Frostwolf"
 };
 
+    private static Random random = new Random();
 
     private void Start()
     {
-        AdManager.Instance.LoadInterstitialAd();
+        //AdManager.Instance.InterstitialAdLoad();
         //DifficultySettings difficultySettings = DifficultySettings.Instance;  
         gameOverScreen.SetActive(false);
         hiScoresScreen.SetActive(false);
@@ -60,6 +62,9 @@ public class LogicManagerScript : MonoBehaviour
 
         filePath = Path.Combine(Application.persistentDataPath, "highscore.json");
         Debug.Log("High Score File Path: " + filePath);
+
+
+        AdManager.Instance.BannerAdDestroy();
     }
 
     [ContextMenu("Increase Score")]
@@ -105,7 +110,17 @@ public class LogicManagerScript : MonoBehaviour
 
     public void restartGame()
     {
-        AdManager.Instance.ShowInterstitialAd();
+        //show Ads Sometimes
+        if (playerScore > playerScoreAdChanceThreshold)
+        {
+            AdManager.Instance.InterstitialAdShow();
+        }
+        else if (random.Next(playerScoreAdChanceThreshold) < playerScore)
+        {
+            AdManager.Instance.InterstitialAdShow();
+        }
+
+
         Debug.Log("restartGame() function triggerd");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
@@ -123,7 +138,7 @@ public class LogicManagerScript : MonoBehaviour
         Application.Quit();
     }
 
-    private static Random random = new Random();
+
 
     public static string GenerateRandomName()
     {
