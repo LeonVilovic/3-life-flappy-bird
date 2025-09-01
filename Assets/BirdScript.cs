@@ -16,6 +16,7 @@ public class BirdScript : MonoBehaviour
     public float CollisionForceMultiplier;
     public float CollisionForceXAxisFactor;
     public Animator animator;
+    public AudioSource audioSource;
 
     void Start()
     {
@@ -29,7 +30,8 @@ public class BirdScript : MonoBehaviour
         {
             myRigidbody.linearVelocity = myRigidbody.linearVelocity * Vector2.right + Vector2.up * flapStrenght;
             //   myRigidbody.AddForce(Vector2.up * flapStrenght, ForceMode2D.Impulse);
-
+            
+            if (!audioSource.isPlaying) { audioSource.Play(); }
         }
         if (birdIsInvulnerablee)
         {
