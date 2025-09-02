@@ -5,11 +5,10 @@ using UnityEngine.SceneManagement;
 public class MainMenuScript : MonoBehaviour
 {
     public float inputDelay = 2f; // Seconds to wait before input works
-    private bool canInput = false;
     public string SceneName;
 
+    private bool canInput = false;
     private AsyncOperation operation;
-
 
     void Start()
     {
@@ -42,7 +41,7 @@ public class MainMenuScript : MonoBehaviour
         while (!operation.isDone)
         {
             float progress = Mathf.Clamp01(operation.progress / 0.9f);
-            Debug.Log("Load Progress for scene: " + progress);
+            //Debug.Log("Load Progress for scene: " + progress);
 
             yield return null;
         }
